@@ -11,6 +11,6 @@ class AgedBrieUpdateQuality extends BaseUpdateQuality
     public function execute(Item $item): void
     {
         parent::execute($item);
-        ++$item->quality;
+        $item->quality++;
     }
 }

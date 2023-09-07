@@ -15,10 +15,10 @@ class NormalUpdateQuality extends BaseUpdateQuality
             if (($item->quality - 2) <= 0) {
                 $item->quality = 0;
             } else {
-                $item->quality = $item->quality - 2;
+                $item->quality -= 2;
             }
         } else {
-            $item->quality = $item->quality - 1;
+            $item->quality--;
         }
     }
 }
