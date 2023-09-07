@@ -6,20 +6,19 @@ namespace GildedRose\Strategy\Item\UpdateQuality;
 
 use GildedRose\Item;
 
-class NormalUpdateQuality implements UpdateQuality
+class NormalUpdateQuality extends BaseUpdateQuality
 {
     public function execute(Item $item): void
     {
-        if ($item->quality > 0) {
-            if ($item->sellIn <= 0) {
-                if (($item->quality - 2) <= 0) {
-                    $item->quality = 0;
-                } else {
-                    $item->quality = $item->quality - 2;
-                }
+        parent::execute($item);
+        if ($item->sellIn <= 0) {
+            if (($item->quality - 2) <= 0) {
+                $item->quality = 0;
             } else {
-                $item->quality = $item->quality - 1;
+                $item->quality = $item->quality - 2;
             }
+        } else {
+            $item->quality = $item->quality - 1;
         }
     }
 }

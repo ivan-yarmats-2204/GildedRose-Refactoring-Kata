@@ -23,6 +23,6 @@ class UpdateByBaseStrategyTest extends TestCase
         $items = [new Item('foo', 2, 60)];
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
-        $this->assertSame(50, $items[0]->quality);
+        $this->assertSame(49, $items[0]->quality);
     }
 }

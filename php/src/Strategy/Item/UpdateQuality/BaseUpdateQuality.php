@@ -6,15 +6,15 @@ namespace GildedRose\Strategy\Item\UpdateQuality;
 
 use GildedRose\Item;
 
-class BaseUpdateQuality implements UpdateQuality
+abstract class BaseUpdateQuality implements UpdateQuality
 {
     public function execute(Item $item): void
     {
-        if ($item->quality >= 50) {
+        if ($item->quality > 50) {
             $item->quality = 50;
         }
 
-        if ($item->quality <= 0) {
+        if ($item->quality < 0) {
             $item->quality = 0;
         }
     }

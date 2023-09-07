@@ -6,12 +6,11 @@ namespace GildedRose\Strategy\Item\UpdateQuality;
 
 use GildedRose\Item;
 
-class AgedBrieUpdateQuality implements UpdateQuality
+class AgedBrieUpdateQuality extends BaseUpdateQuality
 {
     public function execute(Item $item): void
     {
-        if ($item->quality < 50) {
-            ++$item->quality;
-        }
+        parent::execute($item);
+        ++$item->quality;
     }
 }
