@@ -26,7 +26,7 @@ class UpdateByNormalStrategyTest extends TestCase
         $this->assertSame(1, $items[0]->quality);
     }
 
-    public function testIfQualityEqual1AndSellInIsNegative(): void
+    public function testIfQualityEqualOneAndSellInIsNegative(): void
     {
         $items = [new Item('foo', 0, 1)];
         $gildedRose = new GildedRose($items);
